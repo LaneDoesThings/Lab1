@@ -33,9 +33,9 @@ printArrays:
 printLoop:
     ldr r0, =strPrint
     bl printf
-    ldr r1, [r4], #4 @Next index in array
-    ldr r2, [r5], #4 @Next index in array
-    ldr r3, [r6], #4 @Next index in array
+    ldr r1, [r4, #4]! @Next index in array
+    ldr r2, [r5, #4]! @Next index in array
+    ldr r3, [r6, #4]! @Next index in array
     
     add r10, #1 @Add 1 to counter
     cmp r10, #5 @End condition
