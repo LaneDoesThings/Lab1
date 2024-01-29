@@ -31,10 +31,11 @@ printArrays:
 printLoop:
     ldr r0, =strPrint
     bl printf
-    ldr r1, [r1, #4] @Next index in array
-    ldr r2, [r2, #4] @Next index in array
-    ldr r3, [r3, #4] @Next index in array
+    ldr r1, [r1], #4 @Next index in array
+    ldr r2, [r2], #4 @Next index in array
+    ldr r3, [r3], #4 @Next index in array
     
+    add r10, #1 @Add 1 to counter
     cmp r10, #5 @End condition
     bne printLoop
     pop {r0, r1, r2, r3, r10, pc}
