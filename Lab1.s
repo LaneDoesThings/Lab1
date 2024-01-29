@@ -30,7 +30,9 @@ printArrays:
     ldr r5, =array2
     ldr r6, =array3
 
-    add {r4, r5, r6}, #4 @offset
+    add r4, #4 @offset
+    add r5, #4 @offset
+    add r6, #4 @offset
 
 printLoop:
     ldr r0, =strPrint
