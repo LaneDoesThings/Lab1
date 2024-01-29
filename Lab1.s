@@ -26,9 +26,9 @@ main:
 printArrays:
     push {r0, r1, r2, r3, r4, r5, r6, r10, lr}
     mov r10, #0 @counter
-    adr r4, array1 - 4
-    adr r5, array2 - 4
-    adr r6, array3 - 4
+    ldr r4, =array1
+    ldr r5, =array2
+    ldr r6, =array3
 
     @add r4, #4 @offset
     @add r5, #4 @offset
