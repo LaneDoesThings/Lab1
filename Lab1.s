@@ -35,7 +35,7 @@ strWelcomeMessage: .asciz "Please input 10 numbers (enter a number then hit ente
 .balign 4
 strPrint: .asciz "Array 1: %d, Array 2: %d, Array 3: %d"
 
-.balign 4
+.balign 12
 array1: .word 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200
 
 .balign 4
