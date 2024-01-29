@@ -22,18 +22,20 @@ main:
     bl printArrays
 
 printArrays:
-    push {r0, r1, r2, r3, r10, lr}
+    push {r0, r1, r2, r3, r4, r5, r6 r10, lr}
     mov r10, #0 @counter
-    ldr r1, =array1
-    ldr r2, =array2
-    ldr r3, =array3
+    ldr r4, =array1
+    ldr r5, =array2
+    ldr r6, =array3
+
+    
 
 printLoop:
     ldr r0, =strPrint
     bl printf
-    ldr r1, [r1], #4 @Next index in array
-    ldr r2, [r2], #4 @Next index in array
-    ldr r3, [r3], #4 @Next index in array
+    ldr r1, [r4, #4]! @Next index in array
+    ldr r2, [r5, #4]! @Next index in array
+    ldr r3, [r6, #4]! @Next index in array
     
     add r10, #1 @Add 1 to counter
     cmp r10, #5 @End condition
