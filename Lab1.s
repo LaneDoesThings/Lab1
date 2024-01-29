@@ -37,7 +37,7 @@ printLoop:
     
     cmp r10, #5 @End condition
     bne printLoop
-    pop {r0, r1, r2, r3, pc}
+    pop {r0, r1, r2, r3, r10, pc}
 
 exit:
     mov r7, #0x01
