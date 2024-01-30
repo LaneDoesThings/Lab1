@@ -23,6 +23,24 @@ main:
 
     b exit
 
+getInput:
+    push {r0, r1, r5, r10, lr}
+    mov r10, #0 @counter
+    ldr r5, =array2
+inputLoop:
+    ldr r0, =strInputMessage
+    ldr r1, =intInput
+    bl scanf
+    ldr r1, =intInput
+    ldr [r4, #4]!, [r1]
+
+
+    add r10, #1 @Add 1 to counter
+    cmp r10, #10 @End condition
+    bne inputLoop @Enter the 
+
+    pop {r0, r1, r9, r10, pc}
+
 printArrays:
     push {r0, r1, r2, r3, r4, r5, r6, r10, lr}
     mov r10, #0 @counter
@@ -49,7 +67,10 @@ exit:
 .data
 
 .balign 4
-strWelcomeMessage: .asciz "Please input 10 numbers (enter a number then hit enter, etc.)\n"
+strWelcomeMessage: .asciz "Welcome to the array adding program\n"
+
+.balign 4
+strInputMessage: .asciz "Please input 10 numbers (enter a number then hit enter)\n"
 
 .balign 4
 strPrint: .asciz "Array 1: %d, Array 2: %d, Array 3: %d\n"
@@ -61,7 +82,7 @@ array1: .word 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
 array2: .word -10, -9, -8, -7, -6, -5, -4, -3, -2, -1
 
 .balign 4
-array3: .word 0, 0, 0, 0, 0
+array3: .word
 
 .balign 4
 intInput: .word 0
