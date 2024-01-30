@@ -34,7 +34,7 @@ inputLoop:
     bl scanf
     ldr r1, =intInput
     ldr r1, [r1]
-    str r1, [r5, #4]! @Place the value into the array
+    str r1, [r5], #4 @Place the value into the array
 
 
     add r10, #1 @Add 1 to counter
