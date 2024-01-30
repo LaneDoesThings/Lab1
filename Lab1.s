@@ -59,7 +59,7 @@ printLoop:
     bl printf
     
     add r10, #1 @Add 1 to counter
-    cmp r10, #10 @End condition
+    cmp r10, #20 @End condition
     bne printLoop
     pop {r0, r1, r2, r3, r4, r5, r6, r10, pc}
 
