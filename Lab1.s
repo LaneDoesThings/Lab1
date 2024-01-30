@@ -22,6 +22,8 @@ main:
     ldr r5, =array2
     bl getInput
 
+    mov r0, #69420
+
     ldr r4, =array1
     ldr r5, =array2
     ldr r6, =array3
