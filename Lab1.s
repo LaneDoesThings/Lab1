@@ -22,11 +22,10 @@ main:
     ldr r5, =array2
     bl getInput
 
-    mov r0, #255
-
     ldr r4, =array1
     ldr r5, =array2
     ldr r6, =array3
+    bl addArrays
     bl printArrays
 
     b exit
@@ -73,6 +72,28 @@ printLoop:
     cmp r10, #20 @End condition
     bne printLoop
     pop {r0, r1, r2, r3, r4, r5, r6, r10, pc}
+
+
+/*
+r4: Array 1
+r5: Array 2
+r6: Array 3
+ */
+addArrays:
+    push {r1, r2, r3, r4, r5, r6, r10, lr}
+    mov r10, #0 @counter
+
+addLoop:
+    ldr r1, [r4], #4 @Next index in array1
+    ldr r2, [r5], #4 @Next index in array2
+
+    add r3, r1, r2
+    str r3, [r6], #4
+
+    add r10, #1 @Add 1 to counter
+    cmp r10, #20 @End condition
+    bne addLoop
+    pop {r1, r2, r3, r4, r5, r6, r10, pc}
 
 exit:
     mov r7, #0x01
