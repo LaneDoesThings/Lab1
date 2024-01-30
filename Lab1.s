@@ -18,15 +18,24 @@ main:
     ldr r0, =strWelcomeMessage
     bl printf
 
+
+    ldr r5, =array2
     bl getInput
+
+    ldr r4, =array1
+    ldr r5, =array2
+    ldr r6, =array3
     bl printArrays
 
     b exit
 
+
+/*
+r5: The array to put the values into
+ */
 getInput:
     push {r0, r1, r5, r10, lr}
     mov r10, #0 @counter
-    ldr r5, =array2
     add r5, #40 @Offset for there already being 10 elements in the array
 inputLoop:
     ldr r0, =intInputMode @Inputing an integer
@@ -42,12 +51,14 @@ inputLoop:
     bne inputLoop @Enter the 
     pop {r0, r1, r5, r10, pc}
 
+/*
+r4: Array 1
+r5: Array 2
+r6: Array 3
+ */
 printArrays:
     push {r0, r1, r2, r3, r4, r5, r6, r10, lr}
     mov r10, #0 @counter
-    ldr r4, =array1
-    ldr r5, =array2
-    ldr r6, =array3
 
 printLoop:
     ldr r0, =strPrint
