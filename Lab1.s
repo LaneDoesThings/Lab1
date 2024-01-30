@@ -18,7 +18,7 @@ main:
     ldr r0, =strWelcomeMessage
     bl printf
 
-
+    bl getInput
     bl printArrays
 
     b exit
@@ -39,7 +39,7 @@ inputLoop:
     cmp r10, #10 @End condition
     bne inputLoop @Enter the 
 
-    pop {r0, r1, r9, r10, pc}
+    pop {r0, r1, r5, r10, pc}
 
 printArrays:
     push {r0, r1, r2, r3, r4, r5, r6, r10, lr}
