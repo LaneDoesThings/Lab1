@@ -41,6 +41,7 @@ inputLoop:
     cmp r10, #10 @End condition
     bne inputLoop @Enter the 
 
+    mov r5, #0
     pop {r0, r1, r5, r10, pc}
 
 printArrays:
