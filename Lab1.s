@@ -28,7 +28,7 @@ getInput:
     mov r10, #0 @counter
     ldr r5, =array2
 inputLoop:
-    ldr r0, =strInputMessage
+    ldr r0, =intInputMode
     ldr r1, =intInput
     bl scanf
     ldr r1, =intInput
@@ -67,10 +67,10 @@ exit:
 .data
 
 .balign 4
-strWelcomeMessage: .asciz "Welcome to the array adding program\n"
+strWelcomeMessage: .asciz "Please input 10 numbers (enter a number then hit enter)\n"
 
 .balign 4
-strInputMessage: .asciz "Please input 10 numbers (enter a number then hit enter)\n"
+intInputMode: .asciz "%d"
 
 .balign 4
 strPrint: .asciz "Array 1: %d, Array 2: %d, Array 3: %d\n"
