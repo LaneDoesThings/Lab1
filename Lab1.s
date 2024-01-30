@@ -27,14 +27,14 @@ getInput:
     push {r0, r1, r9, r10, lr}
     mov r10, #0 @counter
     ldr r5, =array2
-    add r5, #44 @Offset for there already being 10 elements in the array
+    add r5, #36 @Offset for there already being 10 elements in the array
 inputLoop:
     ldr r0, =intInputMode @Inputing an integer
     ldr r1, =intInput @Address to store the input
     bl scanf
     ldr r1, =intInput
     ldr r1, [r1]
-    str r1, [r5], #4 @Place the value into the array
+    str r1, [r5, #4]! @Place the value into the array
 
 
     add r10, #1 @Add 1 to counter
