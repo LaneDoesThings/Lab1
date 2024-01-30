@@ -27,7 +27,7 @@ getInput:
     push {r0, r1, r9, r10, lr}
     mov r10, #0 @counter
     ldr r5, =array2
-    add r5, #40 @Offset for there already being 10 elements in the array
+    add r5, #44 @Offset for there already being 10 elements in the array
 inputLoop:
     ldr r0, =intInputMode @Inputing an integer
     ldr r1, =intInput @Address to store the input
