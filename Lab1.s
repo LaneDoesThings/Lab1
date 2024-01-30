@@ -32,7 +32,7 @@ inputLoop:
     ldr r1, =intInput
     bl scanf
     ldr r1, =intInput
-    ldr [r4, #4]!, [r1]
+    ldr r1, [r1]
 
 
     add r10, #1 @Add 1 to counter
