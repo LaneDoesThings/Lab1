@@ -114,10 +114,10 @@ intInputMode: .asciz "%d"
 strPrint: .asciz "Array 1: %d, Array 2: %d, Array 3: %d\n"
 
 .balign 4
-array1: .word 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200
+array1: .word -10, -9, -8, -7,-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 
 .balign 4
-array2: .word -9, -8, -7, -6, -5, -4, -3, -2, -1, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 @Last 10 to be determined by user
+array2: .word 0, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 @Last 10 to be determined by user
 
 .balign 4
 array3: .word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 @To be determined at runtime
