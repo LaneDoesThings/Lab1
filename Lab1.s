@@ -10,8 +10,6 @@ gcc -o Lab1 Lab1.o -g
 To Dubug after compiled:
 gdb ./Lab1
  */
-
-
 .global main
 
 main:
@@ -48,7 +46,6 @@ inputLoop:
     ldr r1, [r1]
     str r1, [r5], #4 @Place the value into the array
 
-
     add r10, #1 @Add 1 to counter
     cmp r10, #10 @End condition
     bne inputLoop @Enter the 
@@ -74,7 +71,6 @@ printLoop:
     cmp r10, #20 @End condition
     bne printLoop
     pop {r0, r1, r2, r3, r4, r5, r6, r10, pc} @Return the values back to the regs
-
 
 /*
 r4: Array 1
