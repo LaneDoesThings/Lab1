@@ -26,7 +26,6 @@ main:
     ldr r5, =array2
     ldr r6, =array3
     bl addArrays
-    bl addArrays
     bl printArrays
 
     b exit
